@@ -1,7 +1,7 @@
 const Socket = require('socket.io')
-const socket = new Socket.Server({
+const io = new Socket.Server({
 })
-socket.on('connection', socket => {
+io.on('connection', socket => {
   console.log(`Socket ${socket.id} connected`)
   socket.emit('ho')
   socket.on('hey', _ => {
@@ -11,4 +11,4 @@ socket.on('connection', socket => {
     }, 1000);
   })
 })
-socket.listen(5000)
+io.listen(5000)

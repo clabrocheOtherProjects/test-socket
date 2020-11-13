@@ -1,6 +1,6 @@
 const Socket = require('socket.io-client')
 const socket = Socket('http://localhost:5000')
-socket.on('connection', _ => {
+socket.on('connect', _ => {
   console.log('connected')
   
 })
